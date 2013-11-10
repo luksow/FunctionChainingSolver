@@ -59,7 +59,7 @@ class ExampleSpec extends FlatSpec with Matchers {
     ret should be ('empty)
   }
 
-  it should "not got stuck in infinite loop if there's type cycle" in {
+  it should "not get stuck in infinite loop if there's type cycle" in {
     val list = List(F(intToLong), F(longToString), F(stringToDouble), F(intToInt))
     val ret = solve[Int, Boolean](list)
     ret should be ('empty)
